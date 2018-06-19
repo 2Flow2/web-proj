@@ -1,0 +1,14 @@
+3D Platformer
+Action-adventure
+Battle Royale
+Fighting
+First-person shooter
+MOBA
+Puzzle
+Racing
+Real-time strategy
+RPG
+Side-scrolling platformer
+Side-scrolling shooter
+Sports
+Strategy

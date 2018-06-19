@@ -1,0 +1,1 @@
+Modify the wikipediaGrabber to get a list of all the mobile consoles on the Wikipedia page. The wikipediaGrabber is in my CSIS304 website js files.

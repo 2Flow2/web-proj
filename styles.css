@@ -1,0 +1,168 @@
+header.hLink{
+	border-style:solid;
+	background-color:rgb(83, 83, 89);
+	color:white;
+}
+
+body{
+	background-color: rgb(90, 90, 96);
+	font-family: "Lucida Sans Unicode";
+}
+
+p{
+	color:white;
+	background-color: rgb(90, 90, 96);
+	font-family:"Lucida Sans Unicode";
+}
+
+h1{
+	background-color:black;
+	color:white;
+	font:bold;
+	font-family:"Lucida Sans Unicode";
+}
+
+a:link{
+	color:rgb(211, 221, 237);
+}
+
+a.hLink:link, a.hLink:visited{
+	color:white;
+	background-color:black;
+	padding:10px 15px;
+	border:2px black solid;
+	border-radius:15px;
+	text-decoration:none;
+}
+a.hLink:hover{
+	background-color:rgb(62, 62, 66);
+}
+
+a.hLink:active{
+	background-color:rgb(53, 53, 56);
+}
+
+span.linkPad{
+	padding-right:1em;
+	padding-left:1em;
+}
+
+input[type=text]{ /*The text input areas for the user to put information in*/
+	border-radius:30px;
+	background-color:rgb(128, 128, 137);
+	border-style:none;
+	padding:15px;
+	outline:none;
+	margin-bottom:10px;
+	vertical-align: middle;
+}
+
+input[type=text]:focus{ /*Lightens the color of the input area when it is selected*/
+	background-color:rgb(149, 149, 160);
+}
+
+select{
+	width: 200px;
+	border-radius:30px;
+	background-color:rgb(128, 128, 137);
+	border-style:none;
+	padding:15px;
+	outline:none;
+	margin-bottom:10px;
+	vertical-align: middle;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none; /*This (and the two properties above remove the down-pointing arrow from the right side of the menu)*/
+
+}
+
+select:focus{
+	background-color:rgb(149, 149, 160);
+}
+option{
+	background-color:rgb(128, 128, 137);
+}
+option:focus{
+	background-color:rgb(128, 128, 137);
+	appearance:none;
+}
+
+#small {
+	display:block;
+	margin:1px 0;
+	content:" ";
+}
+
+/*================================================Styles for the addPage page==============================================*/
+.centered{
+	text-align:center;
+}
+
+.inputColumn{
+	display:inline-block;
+	vertical-align: top;
+
+}
+
+.inputPair{
+	display:inline-block;
+}
+
+.consoleTab{
+	display: inline-block;
+	border-left:0px;
+	border-right:black 2px solid;
+	border-bottom:black 2px solid;
+}
+
+#locationPlus{
+	height:30px;
+	width:30px;
+	vertical-align: middle;
+}
+
+#consolesPlus{
+	height:30px;
+	width:30px;
+	vertical-align: middle;
+}
+
+#loc0Span{
+	display: inline-block;
+	outline: solid 1px orange;
+}
+#releaseLocation0Span{
+	display: inline-block;
+	outline: solid 1px orange;
+}
+
+#boxArtBanner{
+	width:250px;
+	height:84px;
+	border-left:black 2px solid;
+	border-right:black 2px solid;
+	border-top:black 2px solid;
+	overflow-x: auto;
+	white-space: nowrap;
+	overflow-y: hidden;
+}
+
+#boxArtBannerInterior{
+	height:104px;
+	overflow-x: auto;
+	white-space: nowrap;
+
+}
+
+#boxArtTabsRow{
+	white-space:nowrap;
+	box-sizing: content-box;
+}
+#boxArt{
+	width:250px;
+	border-left:black 2px solid;
+	border-right:black 2px solid;
+	border-bottom:black 2px solid;
+	border-radius:0px 0px 15px 15px;
+	background-color:rgb(149, 149, 160);
+}

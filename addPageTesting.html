@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/commonScripts.js"></script>
+    <script type="text/javascript" src="js/addPageScripts.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+  </head>
+  <body style="font-weight:bold; font-size:50px">
+    <form action="newPage.php">
+      <!--The top-most section that is untabbed-->
+      <div class="centered">
+        <div class="inputPair">Title:&nbsp;<input type="text" name="title"></div>
+        <div class="inputPair">Series:&nbsp;<input type="text" name="series"></div>
+        <div class="inputPair">Genre:&nbsp;<select name="genre">
+          <script type="text/javascript">populateList("genre", "genre");</script>
+          <option disabled selected style="display:none;"></option>
+        </select></div>
+        <div class="inputPair">
+          Consoles:
+          <div class="inputColumn" id="consolesColumn">
+            <div class="singleInputContainer">
+              <select name="console0" onchange="consoleSelected(this)" alt="none">
+                <script>populateList("consoles", "console0");</script>
+                <option disabled selected style="display:none;">
+              </select>
+            </div>
+          </div>
+          <img id="consolesPlus" src="imgs/plus.png">
+        </div>
+        <div class="inputPair">Box Art:&nbsp;
+          <div id="boxArtBanner">
+            <div id="boxArtBannerInterior">
+              <div id="boxArtTabsRow"></div>
+            </div>
+          </div>
+          <div id="boxArt"></div>
+        </div>
+      </div>
+
+      <!--The bottom section that is tabbed-->
+      <div class="centered">
+        <div class="inputPair">
+          Developer:&nbsp;<input type="text" name="developer">
+        </div>
+        <div class="inputPair">
+          Publisher:&nbsp;<input type="text" name="publisher">
+        </div>
+        <div class="inputPair">
+          Release Location:
+          <div class="inputColumn" id="releaseLocationsColumn">
+            <div class="singleInputContainer">
+              <input type="text" name="releaseLocation0" onkeyup="copyText('releaseLocation0','releaseLocation0Span')">
+            </div>
+          </div>
+          <img id="locationPlus" src="imgs/plus.png">
+        </div>
+        <div class="inputPair">
+          Release Date:
+          <div class="inputColumn" id="releaseDatesColumn">
+            <div class="singleInputContainer">
+              <input type="text" name="releaseDate0"> in <div id="releaseLocation0Span"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

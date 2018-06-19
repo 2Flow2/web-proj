@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/commonScripts.js"></script>
+    <script type="text/javascript" src="js/addPageScripts.js"></script>
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+  </head>
+  <body style="font-weight:bold; font-size:50px">
+    <form action="newPage.php">
+      <!--The top-most section that is untabbed-->
+      <div class="centered">
+        Title:&nbsp;<input type="text" name="title">
+        Series:&nbsp;<input type="text" name="series">
+        Genre:&nbsp;<select name="genre">
+          <script type="text/javascript">populateList("genre");</script>
+          <option disabled selected style="display:none;"></option>
+        </select>
+        Consoles:&nbsp;<select name="consoles">
+          <script>populateList("consoles");</script>
+          <option disabled selected style="display:none;">
+        </select>
+      </div>
+
+      <!--The bottom section that is tabbed-->
+      <div>
+        <div class="inputRow">
+          Developer:&nbsp;<input type="text" name="developer">
+        </div>
+        <div class="inputRow">
+          Publisher:&nbsp;<input type="text" name="publisher">
+        </div>
+        <div class="inputRow">
+          Release Location:
+          <div class="textAreaColumn" id="releaseLocationsColumn">
+            <div class="singleTextAreaContainer">
+              <input type="text" name="releaseLocation0" onkeyup="copyText('releaseLocation0','releaseLocation0Span')">
+            </div>
+          </div>
+          <img id="plus" src="imgs/plus.png">
+        </div>
+        <div class="inputRow">
+          Release Date:
+          <div class="textAreaColumn" id="releaseDatesColumn" >
+            <div class="singleTextAreaContainer">
+              <input type="text" name="releaseDate0"> in <div id="releaseLocation0Span"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

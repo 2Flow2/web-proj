@@ -1,0 +1,73 @@
+3DO Interactive Multiplayer
+APF Imagination Machine
+APF-MP1000
+Amiga CD32
+Apple Bandai Pippin
+Arcadia 2001/Leisure Vision
+Atari 2600
+Atari 5200
+Atari Jaguar
+Atari Jaguar CD
+Atari PONG
+Bally Astrocade
+Bandai Super Vision 8000
+CD-i
+CPS Changer
+Casio Loopy
+Champion 2711
+Channel F II
+Coleco Telstar
+ColecoVision
+Color TV-Game
+Commodore CDTV
+Dreamcast
+Entex Adventure Vision
+Epoch Cassette Vision
+FM Towns Marty
+Fairchild Channel F
+Game Wave
+GameCube
+HyperScan
+Intellivision
+iQue Player
+Magnavox Odyssey
+Magnavox Odyssey²
+Memorex VIS
+Neo-Geo
+Neo-Geo CD
+Nintendo 64
+Nintendo 64DD
+Nuon
+PC Engine/TurboGrafx-16
+PC Engine2/SuperGrafx
+PC-50X Family
+PC-FX
+Ping-O-Tronic
+Pioneer LaserActive
+PlayCable
+PlayStation
+PlayStation 2
+PlayStation 3
+PlayStation 4
+Playdia
+RCA Studio II
+Satellaview
+Sega 32X
+Sega CD/Mega CD
+Sega Genesis/Mega Drive
+Sega Pico
+Sega Saturn
+Super A'Can
+Super NES/Super Famicom
+Switch
+Tele-Spiel
+Turbo Duo/PC Engine Duo
+VC 4000	1978
+VTech CreatiVision
+Vectrex
+Video 2000
+Wii
+Wii U
+Xbox
+Xbox 360
+Xbox One
