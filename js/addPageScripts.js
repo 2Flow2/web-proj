@@ -2,6 +2,7 @@ var releaseInfoCounter = 1;
 var consolesCounter = 1;
 var activeTab = null;
 consoles = [];
+var overscrollAdded = false;
 $(document).ready(function(){
 
   $("#locationPlus").click(function(){
@@ -11,7 +12,6 @@ $(document).ready(function(){
   $("#consolesPlus").click(function(){
     addInput("consoles");
   });
-
 
   $('[name="consoles"]').change(addConsole);
 });
@@ -44,8 +44,12 @@ function removeConsoleFromArray(consoleName){
 function addConsole(consoleName){
   addConsoleToArray(consoleName);
   $('#boxArtTabsRow').append("<div class='consoleTab' onclick='selectImageTab(this)' id='" + consoleName + "Tab'>" + consoleName + "</div>");
-  copyHeight("boxArtBanner", "boxArtTabsRow");
+  copyHeight("boxArtBanner", "boxArtTabsRow", -6);
   $('#boxArt').append('<div id="' + consoleName + 'BoxArt" style="display:none;"><input type="button" value="Choose File"></input></div>');
+  if (overscrollAdded == false){
+    $('#boxArtTabsRow').overscroll({showThumbs:'false', direction:'horizontal'});
+    overscrollAdded = true;
+  }
 }//end addConsole
 
 /*Removes the tab and box art div for the passed console*/
@@ -101,11 +105,13 @@ function populateList(listName, toPopulate){ //Find a way to server-side log the
     });
 }//end populateList()
 
-/*Get the height from one element and set that as the height of another element*/
-function copyHeight(reciever, original){
+/*Get the height from one element and set that as the height of another element. If a third argument is passed, adds that much extra to the new height*/
+function copyHeight(reciever, original, modification){
   original = document.getElementById(original);
   reciever = document.getElementById(reciever);
   var heightValue = original.clientHeight;
+  if (modification)
+    heightValue = heightValue + modification;
   reciever.style.height = (heightValue + "px");
 }//end copyHeight()
 
