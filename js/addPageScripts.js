@@ -1,8 +1,9 @@
-var releaseInfoCounter = 1;
 var consolesCounter = 1;
 var activeTab = null;
 consoles = [];
 var overscrollAdded = false;
+var releaseInfoCounter = 1;
+var usingTouch = false;
 $(document).ready(function(){
 
   $("#locationPlus").click(function(){
@@ -14,6 +15,16 @@ $(document).ready(function(){
   });
 
   $('[name="consoles"]').change(addConsole);
+
+  $('body').on('click touchend', function(event){
+    if (event.type != 'click'){
+      usingTouch = true;
+      if (overscrollAdded = true){
+        $('#boxArtTabsRow').removeOverscroll();
+        overscrollAdded = false;
+      }
+    }
+  });
 });
 
 /**/
@@ -46,7 +57,7 @@ function addConsole(consoleName){
   $('#boxArtTabsRow').append("<div class='consoleTab' onclick='selectImageTab(this)' id='" + consoleName + "Tab'>" + consoleName + "</div>");
   copyHeight("boxArtBanner", "boxArtTabsRow", -6);
   $('#boxArt').append('<div id="' + consoleName + 'BoxArt" style="display:none;"><input type="button" value="Choose File"></input></div>');
-  if (overscrollAdded == false){
+  if (overscrollAdded == false && usingTouch == false){
     $('#boxArtTabsRow').overscroll({showThumbs:'false', direction:'horizontal'});
     overscrollAdded = true;
   }
