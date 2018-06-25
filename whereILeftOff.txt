@@ -1,1 +1,1 @@
-Modify the wikipediaGrabber to get a list of all the mobile consoles on the Wikipedia page. The wikipediaGrabber is in my CSIS304 website js files.
+Remove the option to pick the same console when one is selected and add it back if they change that to a different console. Make the tabs highlightable using keyboard only (for accessiblity). Modify the wikipediaGrabber to get a list of all the mobile consoles on the Wikipedia page. The wikipediaGrabber is in my CSIS304 website js files.

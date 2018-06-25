@@ -54,7 +54,10 @@ function removeConsoleFromArray(consoleName){
 /*Adds a tab and hidden box art div for the passed console*/
 function addConsole(consoleName){
   addConsoleToArray(consoleName);
-  $('#boxArtTabsRow').append("<div class='consoleTab' onclick='selectImageTab(this)' id='" + consoleName + "Tab'>" + consoleName + "</div>");
+  if ($('#boxArtTabsRow').children().length > 0)
+    $('#boxArtTabsRow').append("<div class='consoleTab' onclick='selectImageTab(this)' style='border-left:black 2px solid;' id='" + consoleName + "Tab'>" + consoleName + "</div>");
+  else
+    $('#boxArtTabsRow').append("<div class='consoleTab' onclick='selectImageTab(this)' id='" + consoleName + "Tab'>" + consoleName + "</div>");
   copyHeight("boxArtBanner", "boxArtTabsRow", -6);
   $('#boxArt').append('<div id="' + consoleName + 'BoxArt" style="display:none;"><input type="button" value="Choose File"></input></div>');
   if (overscrollAdded == false && usingTouch == false){
@@ -126,12 +129,19 @@ function copyHeight(reciever, original, modification){
   reciever.style.height = (heightValue + "px");
 }//end copyHeight()
 
-/*Highlights the passed tab and un-hides its associated box art div TO-DO: Have it un-highlight the currently highlighted tab*/
+/*Highlights the passed tab, un-hides its associated box art div, and makes sure its right edge is fully visible.*/
 function selectImageTab(tab){
   var consoleName = tab.innerHTML;
+  var scrollableNode = tab.parentNode.parentNode;
   tab.style['background-color'] = "rgb(149, 149, 160)";
   tab.style['border-bottom'] = "2px solid rgb(149, 149, 160)";
   $('[id="' + consoleName + 'BoxArt"]').css("display", "initial");
+  var isOverflowingLeft = tab.offsetLeft < scrollableNode.scrollLeft;
+  var isOverflowingRight = tab.offsetLeft + tab.offsetWidth > scrollableNode.scrollLeft + scrollableNode.offsetWidth;
+  if (isOverflowingLeft)
+    scrollableNode.scrollLeft = tab.offsetLeft;
+  else if (isOverflowingRight)
+    scrollableNode.scrollLeft = tab.offsetLeft - scrollableNode.offsetWidth + tab.offsetWidth;
   if (activeTab != null){
     var currentlySelected = this.activeTab; //Have to use "this" keyword to circumvent hoisting
     $('[id="' + currentlySelected +'Tab"]').css("background-color", "");
